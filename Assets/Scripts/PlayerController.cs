@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
 
 	void Rotate() {
 		Vector2 moveVec2 = GameObject.Find ("JoystickR").GetComponent<Joystick> ().inputVector;
-		Vector3 moveVec3 = new Vector3 (0, 0, Mathf.Atan2 (moveVec2.y, moveVec2.x));
-		transform.rotation = Quaternion.Euler (moveVec3);
+		Vector3 moveVec3 = new Vector3 (0, 0, Mathf.Atan2 (moveVec2.y, moveVec2.x) * 60);
+		transform.Find("PlayerDir").rotation = Quaternion.Euler (moveVec3);
 	}
 }

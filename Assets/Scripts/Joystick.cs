@@ -59,8 +59,10 @@ public class Joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     }
     
     public void OnEndDrag(PointerEventData eventData)
-    {
-        lever.anchoredPosition = Vector2.zero;
-		inputVector = Vector2.zero;
+	{
+		lever.anchoredPosition = Vector2.zero;
+		if (this.gameObject.name == "JoystickL") {
+			inputVector = Vector2.zero;
+		}
     }
 }
